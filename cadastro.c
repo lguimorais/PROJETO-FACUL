@@ -2,17 +2,27 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+// dados aluno
+char NomeCompletoAluno;
+int MatriculaAluno , CPFaluno,DataNascimentoAluno;
+//dados professor
+char NomeCompletoProf;
+int MatriculaProf, CPFprof, DataNascimentoProf;
+//disciplina
+char NomedaDisciplina, curso;
+int CodigoDisciplina;
+//curso
+int CodigoCurso;
+char NomeCurso;
 
 void menuprincipal()
 {
     printf("|==========================================================================|\n");
-    printf("|                           template do projeto                            |\n");
+    printf("|                            cadastro de notas                             |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         1-opcao 1                  |          2-opcao 2                  |\n");
+    printf("|         1-cadastro                 |         2-impressão                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         3-opcao 3                  |          4-opcao 4                  |\n");
-    printf("+--------------------------------------------------------------------------+\n");
-    printf("|         5-opcao 5                  |          6-opcao 6                  |\n");
+    printf("|         3-conteudos                |         4-notas                     |\n");
     printf("===========================================================================+\n");
 }
 void submenucad()
@@ -21,13 +31,26 @@ void submenucad()
     printf("|==========================================================================|\n");
     printf("|                              cadastro geral                              |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         1-cadastro 1               |          2-cadasto 2                |\n");
+    printf("|         1-Alunos                   |            2-Professores            |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         3-cadastro 3               |          4-cadasto 4                |\n");
+    printf("|         3-Disciplina               |            4-Cursos                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         5-cadastro 5               |          6-cadasto 6                |\n");
+    printf("|              5- Aperte 5 para voltar para o menu principal               |\n");
     printf("===========================================================================+\n");
-    printf("informe a operacao desejada ou 5 para voltar para o menu principal\n");
+}
+
+void submenuimpressao()
+{
+
+    printf("|==========================================================================|\n");
+    printf("|                              impressão de dados                              |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("|         1-Alunos e Curso                   |        2-conteúdos          |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("|         3-Disciplina e Professor           |        4-boletim            |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("|              5- aperte 5 para voltar para o menu principal               |\n");
+    printf("===========================================================================+\n");
 }
 int main()
 {
