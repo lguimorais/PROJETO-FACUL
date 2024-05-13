@@ -1,6 +1,3 @@
-Claro, aqui está uma organização sugerida para o README do seu algoritmo de gestão acadêmica em C:
-
----
 
 # Algoritmo de Gestão Acadêmica em C
 
