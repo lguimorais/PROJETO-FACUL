@@ -3,7 +3,8 @@
 #include <string.h>
 #include <locale.h>
 
-void menuprincipal(){
+void menuprincipal()
+{
     printf("|==========================================================================|\n");
     printf("|                           template do projeto                            |\n");
     printf("+--------------------------------------------------------------------------+\n");
@@ -14,29 +15,21 @@ void menuprincipal(){
     printf("|         5-opcao 5                  |          6-opcao 6                  |\n");
     printf("===========================================================================+\n");
 }
+void submenucad()
+{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    printf("|==========================================================================|\n");
+    printf("|                              cadastro geral                              |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("|         1-cadastro 1               |          2-cadasto 2                |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("|         3-cadastro 3               |          4-cadasto 4                |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("|         5-cadastro 5               |          6-cadasto 6                |\n");
+    printf("===========================================================================+\n");
+    printf("informe a operacao desejada ou 5 para voltar para o menu principal\n");
+}
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
-    
 }
