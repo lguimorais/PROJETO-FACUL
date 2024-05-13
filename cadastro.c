@@ -14,7 +14,10 @@ int CodigoDisciplina;
 //curso
 int CodigoCurso;
 char NomeCurso;
-
+//boletim
+int CodigoBoletim, DataBoletim, notas, MediadasNotas;
+//caso necessario acrescentar novas variaveis 
+char
 void menuprincipal()
 {
     printf("|==========================================================================|\n");
