@@ -3,8 +3,7 @@
 #include <string.h>
 #include <locale.h>
 // dados aluno
-char NomeCompletoAluno[50];
-int MatriculaAluno, CPFaluno, DataNascimentoAluno;
+char MatriculaAluno, CPFaluno, DataNascimentoAluno, NomeCompletoAluno[50];
 // dados professor
 char NomeCompletoProf[50];
 int MatriculaProf, CPFprof, DataNascimentoProf;
@@ -62,8 +61,15 @@ void submenucad()
     switch (OpSubMenuCad)
     {
     case 1:
-        printf("informe os dados do aluno \n");
-    scanf("%s", &NomeCompletoAluno);
+        printf("informe o nome do aluno:EX:\"pedro\" \n");
+        scanf("%s", &NomeCompletoAluno);
+        printf("informe o CPF  do aluno: EX:000.000.000-00\n");
+        scanf("%s", &CPFaluno);
+        printf("informe a matricula do aluno:EX:000.000\n");
+        scanf("%s", &MatriculaAluno);
+        printf("informe a data de nascimento do aluno:EX:00/00/0000\n");
+        scanf("%s", &DataNascimentoAluno);
+
         break;
     case 2:
         printf("insira os dados do professor");
