@@ -16,7 +16,10 @@ int CodigoCurso;
 char NomeCurso;
 // boletim
 int CodigoBoletim, DataBoletim, notas, MediadasNotas;
-// caso necessario acrescentar novas variaveis
+// operações dos menus
+int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao;
+//  caso necessario acrescentar novas variaveis
+
 void menuprincipal()
 {
     printf("|==========================================================================|\n");
@@ -26,6 +29,17 @@ void menuprincipal()
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         3-conteudos                |         4-notas                     |\n");
     printf("===========================================================================+\n");
+    printf("Informe a operação ou Zero para sair\n");
+    scanf("%d", &OpMenuPincipal);
+    switch (OpMenuPincipal)
+    {
+    case 1:
+        submenucad();
+        break;
+    case 2:
+        submenuimpressao();
+        break;
+    }
 }
 void submenucad()
 {
@@ -56,5 +70,7 @@ void submenuimpressao()
 }
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    menuprincipal();
+    system("pause");
 }
