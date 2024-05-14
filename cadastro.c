@@ -61,6 +61,7 @@ void submenucad()
     switch (OpSubMenuCad)
     {
     case 1:
+    printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
         printf("informe o nome do aluno:EX:\"pedro\" \n");
         scanf("%s", &NomeCompletoAluno);
         printf("informe o CPF  do aluno: EX:000.000.000-00\n");
