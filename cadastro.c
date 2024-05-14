@@ -29,7 +29,7 @@ void menuprincipal()
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         3-conteudos                |         4-notas                     |\n");
     printf("===========================================================================+\n");
-    printf("Informe a operação ou Zero para sair\n");
+    printf("Informe a operação ou 5 para sair\n");
     scanf("%d", &OpMenuPincipal);
     switch (OpMenuPincipal)
     {
@@ -53,6 +53,28 @@ void submenucad()
     printf("+--------------------------------------------------------------------------+\n");
     printf("|              5- Aperte 5 para voltar para o menu principal               |\n");
     printf("===========================================================================+\n");
+    printf("Informe a operação ou 5 para o menu principal\n");
+    scanf("%d", &OpSubMenuCad);
+    switch (OpSubMenuCad)
+    {
+    case 1:
+    printf("informe os dados do aluno \n");
+        break;
+    case 2:
+        printf("insira os dados do professor");
+        break;
+    case 3:
+        printf("informe a disciplina\n");
+        break;
+        case 4:
+        printf("informe o curso \n");
+        break;
+
+
+
+    
+  
+    }
 }
 
 void submenuimpressao()
