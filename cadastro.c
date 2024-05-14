@@ -69,6 +69,9 @@ void submenucad()
         case 4:
         printf("informe o curso \n");
         break;
+        case 5 :
+        menuprincipal();
+        break;
 
 
 
