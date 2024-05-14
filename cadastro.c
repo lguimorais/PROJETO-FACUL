@@ -59,6 +59,7 @@ void submenucad()
     {
     case 1:
     printf("informe os dados do aluno \n");
+    scanf("%s ", NomeCompletoAluno);
         break;
     case 2:
         printf("insira os dados do professor");
