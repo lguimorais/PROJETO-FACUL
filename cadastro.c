@@ -4,19 +4,19 @@
 #include <locale.h>
 // dados aluno
 char NomeCompletoAluno;
-int MatriculaAluno , CPFaluno,DataNascimentoAluno;
-//dados professor
+int MatriculaAluno, CPFaluno, DataNascimentoAluno;
+// dados professor
 char NomeCompletoProf;
 int MatriculaProf, CPFprof, DataNascimentoProf;
-//disciplina
+// disciplina
 char NomedaDisciplina, curso;
 int CodigoDisciplina;
-//curso
+// curso
 int CodigoCurso;
 char NomeCurso;
-//boletim
+// boletim
 int CodigoBoletim, DataBoletim, notas, MediadasNotas;
-//caso necessario acrescentar novas variaveis 
+// caso necessario acrescentar novas variaveis
 void menuprincipal()
 {
     printf("|==========================================================================|\n");
@@ -45,7 +45,7 @@ void submenuimpressao()
 {
 
     printf("|==========================================================================|\n");
-    printf("|                              impressão de dados                              |\n");
+    printf("|                              impressão de dados                          |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         1-Alunos e Curso                   |        2-conteúdos          |\n");
     printf("+--------------------------------------------------------------------------+\n");
