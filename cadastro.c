@@ -3,17 +3,17 @@
 #include <string.h>
 #include <locale.h>
 // dados aluno
-char NomeCompletoAluno;
+char NomeCompletoAluno[20];
 int MatriculaAluno, CPFaluno, DataNascimentoAluno;
 // dados professor
-char NomeCompletoProf;
+char NomeCompletoProf[20];
 int MatriculaProf, CPFprof, DataNascimentoProf;
 // disciplina
-char NomedaDisciplina, curso;
+char NomedaDisciplina, curso [30];
 int CodigoDisciplina;
 // curso
 int CodigoCurso;
-char NomeCurso;
+char NomeCurso [10];
 // boletim
 int CodigoBoletim, DataBoletim, notas, MediadasNotas;
 // operações dos menus
