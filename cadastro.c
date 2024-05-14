@@ -3,17 +3,17 @@
 #include <string.h>
 #include <locale.h>
 // dados aluno
-char NomeCompletoAluno[20];
+char NomeCompletoAluno[50];
 int MatriculaAluno, CPFaluno, DataNascimentoAluno;
 // dados professor
-char NomeCompletoProf[20];
+char NomeCompletoProf[50];
 int MatriculaProf, CPFprof, DataNascimentoProf;
 // disciplina
-char NomedaDisciplina, curso[30];
+char NomedaDisciplina, curso[60];
 int CodigoDisciplina;
 // curso
 int CodigoCurso;
-char NomeCurso[10];
+char NomeCurso[20];
 // boletim
 int CodigoBoletim, DataBoletim, notas, MediadasNotas;
 // operações dos menus
@@ -63,7 +63,7 @@ void submenucad()
     {
     case 1:
         printf("informe os dados do aluno \n");
-
+    scanf("%s", &NomeCompletoAluno);
         break;
     case 2:
         printf("insira os dados do professor");
