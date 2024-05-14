@@ -9,11 +9,11 @@ int MatriculaAluno, CPFaluno, DataNascimentoAluno;
 char NomeCompletoProf[20];
 int MatriculaProf, CPFprof, DataNascimentoProf;
 // disciplina
-char NomedaDisciplina, curso [30];
+char NomedaDisciplina, curso[30];
 int CodigoDisciplina;
 // curso
 int CodigoCurso;
-char NomeCurso [10];
+char NomeCurso[10];
 // boletim
 int CodigoBoletim, DataBoletim, notas, MediadasNotas;
 // operações dos menus
@@ -34,10 +34,14 @@ void menuprincipal()
     switch (OpMenuPincipal)
     {
     case 1:
+        system("cls");
         submenucad();
+
         break;
     case 2:
+        system("cls");
         submenuimpressao();
+
         break;
     }
 }
@@ -51,14 +55,14 @@ void submenucad()
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         3-Disciplina               |            4-Cursos                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|              5- Aperte 5 para voltar para o menu principal               |\n");
+    printf("|                    5- para voltar para o menu principal                  |\n");
     printf("===========================================================================+\n");
     printf("Informe a operação ou 5 para o menu principal\n");
     scanf("%d", &OpSubMenuCad);
     switch (OpSubMenuCad)
     {
     case 1:
-    printf("informe os dados do aluno \n");
+        printf("informe os dados do aluno \n");
 
         break;
     case 2:
@@ -68,17 +72,13 @@ void submenucad()
     case 3:
         printf("informe a disciplina\n");
         break;
-        case 4:
+    case 4:
         printf("informe o curso \n");
         break;
-        case 5 :
+    case 5:
+        system("cls");
         menuprincipal();
         break;
-
-
-
-    
-  
     }
 }
 
@@ -88,12 +88,33 @@ void submenuimpressao()
     printf("|==========================================================================|\n");
     printf("|                              impressão de dados                          |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         1-Alunos e Curso                   |        2-conteúdos          |\n");
+    printf("|         1-Alunos e Curso                 |          2-conteúdos          |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         3-Disciplina e Professor           |        4-boletim            |\n");
+    printf("|         3-Disciplina e Professor         |          4-boletim            |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|              5- aperte 5 para voltar para o menu principal               |\n");
+    printf("|         5-menu principal                 |          6-cadastro geral     |\n");
     printf("===========================================================================+\n");
+    printf("Informe a operação:\n");
+    scanf("%d", &OpSubMenuImpressao);
+    switch (OpSubMenuImpressao)
+    {
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    case 4:
+        break;
+    case 5:
+        system("cls");
+        menuprincipal();
+        break;
+    case 6:
+        system("cls");
+        submenucad();
+        break;
+    }
 }
 int main()
 {
