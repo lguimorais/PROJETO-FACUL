@@ -24,7 +24,6 @@ int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao;
 void menuprincipal()
 {
 
-   
     printf("|==========================================================================|\n");
     printf("|                            cadastro de notas                             |\n");
     printf("+--------------------------------------------------------------------------+\n");
@@ -65,7 +64,7 @@ void submenucad()
     switch (OpSubMenuCad)
     {
     case 1:
-        arquivo = fopen("", "w+");
+        arquivo = fopen("C:\\Users\\tete4\\Documents\\PROJETO-FACUL\\notas.txt", "w+");
         if (arquivo == 0)
         {
             printf("falha ao visualizar o arquivo.\n");
@@ -83,6 +82,10 @@ void submenucad()
             scanf("%s", &MatriculaAluno);
             printf("informe a data de nascimento do aluno:EX:00/00/0000\n");
             scanf("%s", &DataNascimentoAluno);
+            fprintf(arquivo, "o nome do aluno é:%s\n", NomeCompletoAluno);
+            fprintf(arquivo, "o CPF é:%s\n", CPFaluno);
+            fprintf(arquivo, "o curso é:%s\n", MatriculaAluno);
+            fprintf(arquivo, "a data de nascimento do aluno é:%s\n", DataNascimentoAluno);
             fclose(arquivo);
         }
         break;
