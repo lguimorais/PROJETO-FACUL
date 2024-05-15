@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+// arquivos
+FILE *arquivo;
 // dados aluno
 char MatriculaAluno, CPFaluno, DataNascimentoAluno, NomeCompletoAluno[50];
 // dados professor
@@ -21,6 +23,8 @@ int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao;
 
 void menuprincipal()
 {
+
+   
     printf("|==========================================================================|\n");
     printf("|                            cadastro de notas                             |\n");
     printf("+--------------------------------------------------------------------------+\n");
@@ -61,16 +65,26 @@ void submenucad()
     switch (OpSubMenuCad)
     {
     case 1:
-        printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
-        printf("informe o nome do aluno:EX:\"pedro\" \n");
-        scanf("%s", &NomeCompletoAluno);
-        printf("informe o CPF  do aluno: EX:000.000.000-00\n");
-        scanf("%s", &CPFaluno);
-        printf("informe a matricula do aluno:EX:000.000\n");
-        scanf("%s", &MatriculaAluno);
-        printf("informe a data de nascimento do aluno:EX:00/00/0000\n");
-        scanf("%s", &DataNascimentoAluno);
-
+        arquivo = fopen("", "w+");
+        if (arquivo == 0)
+        {
+            printf("falha ao visualizar o arquivo.\n");
+        }
+        else
+        {
+            printf("arquivo encontrado com sucesso\n");
+            system("Pause");
+            printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
+            printf("informe o nome do aluno:EX:\"pedro\" \n");
+            scanf("%s", &NomeCompletoAluno);
+            printf("informe o CPF  do aluno: EX:000.000.000-00\n");
+            scanf("%s", &CPFaluno);
+            printf("informe a matricula do aluno:EX:000.000\n");
+            scanf("%s", &MatriculaAluno);
+            printf("informe a data de nascimento do aluno:EX:00/00/0000\n");
+            scanf("%s", &DataNascimentoAluno);
+            fclose(arquivo);
+        }
         break;
     case 2:
         printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
@@ -82,7 +96,6 @@ void submenucad()
         scanf("%s", &MatriculaProf);
         printf("informe a data de nascimento do professor: EX:00/00/0000\n");
         scanf("%s", &DataNascimentoProf);
-
         break;
     case 3:
         printf("informe a disciplina\n");
@@ -134,6 +147,7 @@ void submenuimpressao()
 int main()
 {
     setlocale(LC_ALL, "Portuguese_Brazil");
+
     menuprincipal();
     system("pause");
 }
