@@ -31,7 +31,7 @@ void menuprincipal()
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         3-Conteúdos                |         4-Notas                     |\n");
     printf("===========================================================================+\n");
-    printf("Informe a operação ou 5 para sair\n");
+    printf("Informe a operação ou 5 para sair.\n");
     scanf("%d", &OpMenuPincipal);
     switch (OpMenuPincipal)
     {
@@ -59,7 +59,7 @@ void submenucad()
     printf("+--------------------------------------------------------------------------+\n");
     printf("|                    5- para voltar para o menu principal                  |\n");
     printf("===========================================================================+\n");
-    printf("Informe a operação\n");
+    printf("Informe a operação.\n");
     scanf("%d", &OpSubMenuCad);
     switch (OpSubMenuCad)
     {
