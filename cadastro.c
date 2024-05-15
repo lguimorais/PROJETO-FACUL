@@ -26,11 +26,11 @@ void menuprincipal()
 
    
     printf("|==========================================================================|\n");
-    printf("|                            cadastro de notas                             |\n");
+    printf("|                            Cadastro de notas                             |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         1-cadastro                 |         2-impressão                 |\n");
+    printf("|         1-Cadastro                 |         2-Impressão                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         3-conteudos                |         4-notas                     |\n");
+    printf("|         3-Conteúdos                |         4-Notas                     |\n");
     printf("===========================================================================+\n");
     printf("Informe a operação ou 5 para sair\n");
     scanf("%d", &OpMenuPincipal);
@@ -60,7 +60,7 @@ void submenucad()
     printf("+--------------------------------------------------------------------------+\n");
     printf("|                    5- para voltar para o menu principal                  |\n");
     printf("===========================================================================+\n");
-    printf("Informe a operação ou 5 para o menu principal\n");
+    printf("Informe a operação\n");
     scanf("%d", &OpSubMenuCad);
     switch (OpSubMenuCad)
     {
