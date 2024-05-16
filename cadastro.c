@@ -65,11 +65,11 @@ void submenucad()
         arquivo = fopen(/*nao precisa colocar nada ainda entre as "" */"", "w+");
         if (arquivo == 0)
         {
-            printf("falha ao visualizar o arquivo.\n");
+            printf("Falha ao visualizar o arquivo.\n");
         }
         else
         {
-            printf("arquivo encontrado com sucesso\n");
+            printf("Arquivo encontrado com sucesso\n");
             system("Pause");
             printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
             printf("informe o nome do aluno:EX:\"pedro\" \n");
