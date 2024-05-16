@@ -7,16 +7,14 @@ FILE *arquivo;
 // dados aluno
 char MatriculaAluno, CPFaluno, DataNascimentoAluno, NomeCompletoAluno[50];
 // dados professor
-char NomeCompletoProf[50];
-int MatriculaProf, CPFprof, DataNascimentoProf;
+char NomeCompletoProf, MatriculaProf, CPFprof, DataNascimentoProf[50];
 // disciplina
-char NomedaDisciplina, curso[60];
-int CodigoDisciplina;
+char NomedaDisciplina, curso,CodigoDisciplina[60];
 // curso
-int CodigoCurso;
-char NomeCurso[20];
+
+char NomeCurso, CodigoCurso[40];
 // boletim
-int CodigoBoletim, DataBoletim, notas, MediadasNotas;
+char CodigoBoletim, DataBoletim, notas, MediadasNotas[30];
 // operações dos menus
 int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao;
 //  caso necessario acrescentar novas variaveis
