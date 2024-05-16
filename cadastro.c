@@ -62,7 +62,7 @@ void submenucad()
     switch (OpSubMenuCad)
     {
     case 1:
-        arquivo = fopen("C:\\Users\\tete4\\Documents\\PROJETO-FACUL\\notas.txt", "w+");
+        arquivo = fopen(/*nao precisa colocar nada ainda entre as "" */"", "w+");
         if (arquivo == 0)
         {
             printf("falha ao visualizar o arquivo.\n");
