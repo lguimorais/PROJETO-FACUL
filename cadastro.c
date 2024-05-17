@@ -9,9 +9,8 @@ char MatriculaAluno[10], CPFaluno[10], DataNascimentoAluno[10], NomeCompletoAlun
 // dados professor
 char NomeCompletoProf[10], MatriculaProf[10], CPFprof[10], DataNascimentoProf[10];
 // disciplina
-char NomedaDisciplina[10], curso[60], CodigoDisciplina[10];
+char NomedaDisciplina[10], curso[10], CodigoDisciplina[10];
 // curso
-
 char NomeCurso[10],CodigoCurso[10];
 // boletim
 char CodigoBoletim[10], DataBoletim[10], notas[10], MediadasNotas[10];
