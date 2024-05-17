@@ -5,19 +5,18 @@
 // arquivos
 FILE *arquivo;
 // dados aluno
-char MatriculaAluno, CPFaluno, DataNascimentoAluno, NomeCompletoAluno[50];
+char MatriculaAluno[10], CPFaluno[10], DataNascimentoAluno[10], NomeCompletoAluno[10];
 // dados professor
-char NomeCompletoProf[50];
-int MatriculaProf, CPFprof, DataNascimentoProf;
+char NomeCompletoProf[10], MatriculaProf[10], CPFprof[10], DataNascimentoProf[10];
 // disciplina
-char NomedaDisciplina, curso[60],CodigoDisciplina;
+char NomedaDisciplina[10], curso[60], CodigoDisciplina[10];
 // curso
-int CodigoCurso;
-char NomeCurso[20];
+
+char NomeCurso[10],CodigoCurso[10];
 // boletim
-int CodigoBoletim, DataBoletim, notas, MediadasNotas;
+char CodigoBoletim[10], DataBoletim[10], notas[10], MediadasNotas[10];
 // operações dos menus
-int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao;
+int OpMenuPincipal, OpSubMenuCad , OpSubMenuImpressao;
 //  caso necessario acrescentar novas variaveis
 
 void menuprincipal()
@@ -63,7 +62,7 @@ void submenucad()
     switch (OpSubMenuCad)
     {
     case 1:
-        arquivo = fopen("C://temp//notas.txt", "w+");1
+        arquivo = fopen("C://temp//notas.txt", "w+");
         if (arquivo == 0)
         {
             printf("falha ao visualizar o arquivo.\n");
