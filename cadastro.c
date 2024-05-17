@@ -7,14 +7,15 @@ FILE *arquivo;
 // dados aluno
 char MatriculaAluno, CPFaluno, DataNascimentoAluno, NomeCompletoAluno[50];
 // dados professor
-char NomeCompletoProf, MatriculaProf, CPFprof, DataNascimentoProf[50];
+char NomeCompletoProf[50];
+int MatriculaProf, CPFprof, DataNascimentoProf;
 // disciplina
-char NomedaDisciplina, curso,CodigoDisciplina[60];
+char NomedaDisciplina, curso[60],CodigoDisciplina;
 // curso
-
-char NomeCurso, CodigoCurso[40];
+int CodigoCurso;
+char NomeCurso[20];
 // boletim
-char CodigoBoletim, DataBoletim, notas, MediadasNotas[30];
+int CodigoBoletim, DataBoletim, notas, MediadasNotas;
 // operações dos menus
 int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao;
 //  caso necessario acrescentar novas variaveis
@@ -62,14 +63,14 @@ void submenucad()
     switch (OpSubMenuCad)
     {
     case 1:
-        arquivo = fopen(/*nao precisa colocar nada ainda entre as "" */"", "w+");
+        arquivo = fopen("C://temp//notas.txt", "w+");1
         if (arquivo == 0)
         {
-            printf("Falha ao visualizar o arquivo.\n");
+            printf("falha ao visualizar o arquivo.\n");
         }
         else
         {
-            printf("Arquivo encontrado com sucesso\n");
+            printf("arquivo encontrado com sucesso\n");
             system("Pause");
             printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
             printf("informe o nome do aluno:EX:\"pedro\" \n");
@@ -99,7 +100,12 @@ void submenucad()
         scanf("%s", &DataNascimentoProf);
         break;
     case 3:
-        printf("informe a disciplina\n");
+        printf("informe a disciplina:\n");
+        scanf("%s", NomedaDisciplina);
+        printf("informe o codigo da disciplina:\n");
+        scanf("%s", CodigoDisciplina);
+
+
         break;
     case 4:
         printf("informe o curso \n");
