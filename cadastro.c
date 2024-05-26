@@ -15,7 +15,7 @@ char CodigoCurso[10] /*a variavel curso é utilizada aqui tbm*/;
 // boletim
 char CodigoBoletim[10], DataBoletim[10], materiaprof[10];
 // calculo das notas
-float notas, MediadasNotas;
+float nota1, nota2, nota3, nota4, MediadasNotas;
 // operações dos menus
 int OpMenuPincipal,
     OpSubMenuCad, OpSubMenuImpressao, operacao;
@@ -192,7 +192,7 @@ void submenunotas()
     printf("|                                    notas                                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("digite a priemira nota:");
-    scanf("%f", );
+    scanf("%f", nota1);
 }
 int main()
 {
