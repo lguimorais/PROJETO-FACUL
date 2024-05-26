@@ -13,9 +13,12 @@ char NomedaDisciplina[10], curso[10], CodigoDisciplina[10];
 // curso
 char CodigoCurso[10] /*a variavel curso é utilizada aqui tbm*/;
 // boletim
-char CodigoBoletim[10], DataBoletim[10], notas[10], MediadasNotas[10], materiaprof[10];
+char CodigoBoletim[10], DataBoletim[10], materiaprof[10];
+// calculo das notas
+float notas, MediadasNotas;
 // operações dos menus
-int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao, operacao;
+int OpMenuPincipal,
+    OpSubMenuCad, OpSubMenuImpressao, operacao;
 //  caso necessario acrescentar novas variaveis
 
 void menuprincipal()
@@ -48,6 +51,10 @@ void menuprincipal()
 
         break;
     case 3:
+        submenuconteudo();
+        break;
+    case 4:
+        submenunotas();
         break;
     }
 }
@@ -171,6 +178,21 @@ void submenuimpressao()
         submenucad();
         break;
     }
+}
+void submenuconteudo()
+{
+    printf("|==========================================================================|\n");
+    printf("|                                  conteudos                               |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("Digite a materia que deseja contabilizar as notas:\n");
+}
+void submenunotas()
+{
+    printf("|==========================================================================|\n");
+    printf("|                                    notas                                 |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("digite a priemira nota:");
+    scanf("%f", );
 }
 int main()
 {
