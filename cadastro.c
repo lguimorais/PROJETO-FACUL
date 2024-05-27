@@ -192,7 +192,15 @@ void submenunotas()
     printf("|                                    notas                                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("digite a priemira nota:");
-    scanf("%f", nota1);
+    scanf("%f", &nota1);
+    printf("digite a priemira nota:");
+    scanf("%f", &nota2);
+    printf("digite a priemira nota:");
+    scanf("%f", &nota3);
+    printf("digite a priemira nota:");
+    scanf("%f", &nota4);
+    MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
+    printf("a sua media é:%.2f\n", MediadasNotas);
 }
 int main()
 {
