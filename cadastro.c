@@ -5,15 +5,15 @@
 // arquivos
 FILE *arquivo;
 // dados aluno
-char MatriculaAluno[10], CPFaluno[10], DataNascimentoAluno[10], NomeCompletoAluno[10], cursoaluno[10];
+char MatriculaAluno[20], CPFaluno[20], DataNascimentoAluno[20], NomeCompletoAluno[20], cursoaluno[20];
 // dados professor
-char NomeCompletoProf[10], MatriculaProf[10], CPFprof[10], DataNascimentoProf[10];
+char NomeCompletoProf[20], MatriculaProf[20], CPFprof[20], DataNascimentoProf[20];
 // disciplina
-char NomedaDisciplina[10], curso[10], CodigoDisciplina[10];
+char NomedaDisciplina[10], curso[20], CodigoDisciplina[20];
 // curso
-char CodigoCurso[10] /*a variavel curso é utilizada aqui tbm*/;
+char CodigoCurso[20] /*a variavel curso é utilizada aqui tbm*/;
 // boletim
-char CodigoBoletim[10], DataBoletim[10], materiaprof[10];
+char CodigoBoletim[20], DataBoletim[20], materiaprof[20];
 // calculo das notas
 float nota1, nota2, nota3, nota4, MediadasNotas;
 // operações dos menus
