@@ -136,7 +136,7 @@ void submenucad()
         scanf("%s", &curso);
         fprintf(arquivo, "+------------------Cad.Curso--------------+\n");
         fprintf(arquivo, "o curso é:%s\n", curso);
-        fclose(arquivo);
+
         break;
     case 5:
         system("cls");
@@ -166,7 +166,9 @@ void submenunotas()
     scanf("%f", &nota4);
     MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
     printf("a sua media é:%.2f\n", MediadasNotas);
-    fprintf();
+    fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
+    fprintf(arquivo,"a media das notas é:%.2f\n", MediadasNotas);
+    fclose(arquivo);
 }
 void submenuimpressao()
 {
