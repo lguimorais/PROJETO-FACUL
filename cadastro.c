@@ -17,8 +17,7 @@ char CodigoBoletim[20], DataBoletim[20], materiaprof[20];
 // calculo das notas
 float nota1, nota2, nota3, nota4, MediadasNotas;
 // operações dos menus
-int OpMenuPincipal,
-    OpSubMenuCad, OpSubMenuImpressao, operacao;
+int OpMenuPincipal,OpSubMenuCad, OpSubMenuImpressao, operacao;
 //  caso necessario acrescentar novas variaveis
 
 void menuprincipal()
@@ -30,7 +29,7 @@ void menuprincipal()
     }
 
     printf("|==========================================================================|\n");
-    printf("|                            Cadastro de notas                             |\n");
+    printf("|                               menu principal                             |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         1-Cadastro                 |         2-Impressão                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
@@ -109,14 +108,11 @@ void submenucad()
         scanf("%s", &MatriculaProf);
         printf("informe a data de nascimento do professor: EX:00/00/0000\n");
         scanf("%s", &DataNascimentoProf);
-        printf("informe a materia:\n");
-        scanf("%s", &materiaprof);
         fprintf(arquivo, "+------------------Cad.Prof-----------------+\n");
         fprintf(arquivo, "o nome do professor é:%s\n", NomeCompletoProf);
         fprintf(arquivo, "o CPF é:%s\n", CPFprof);
         fprintf(arquivo, "a matricula do professor é:%s\n", MatriculaProf);
         fprintf(arquivo, "a data de nascimento do professor é:%s\n", DataNascimentoProf);
-        fprintf(arquivo, "o nome da materia:%s\n", materiaprof);
         submenucad();
 
         break;
@@ -136,6 +132,7 @@ void submenucad()
         scanf("%s", &curso);
         fprintf(arquivo, "+------------------Cad.Curso--------------+\n");
         fprintf(arquivo, "o curso é:%s\n", curso);
+        // botar if-else
 
         break;
     case 5:
@@ -150,6 +147,7 @@ void submenuconteudo()
     printf("|                                  conteudos                               |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("Digite a materia que deseja contabilizar as notas:\n");
+    //por if-else
 }
 void submenunotas()
 {
@@ -167,8 +165,9 @@ void submenunotas()
     MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
     printf("a sua media é:%.2f\n", MediadasNotas);
     fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
-    fprintf(arquivo,"a media das notas é:%.2f\n", MediadasNotas);
-    fclose(arquivo);
+    fprintf(arquivo, "a media das notas é:%.2f\n", MediadasNotas);
+    //if-else
+    fclose(arquivo);//esta linha é temporaria 
 }
 void submenuimpressao()
 {
