@@ -166,6 +166,7 @@ void submenunotas()
     scanf("%f", &nota4);
     MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
     printf("a sua media é:%.2f\n", MediadasNotas);
+    fprintf();
 }
 void submenuimpressao()
 {
