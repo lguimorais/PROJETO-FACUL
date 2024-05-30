@@ -147,6 +147,7 @@ void submenuconteudo()
     printf("|                                  conteudos                               |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("Digite a materia que deseja contabilizar as notas:\n");
+    scanf("%s",materiaprof );
     //por if-else
 }
 void submenunotas()
