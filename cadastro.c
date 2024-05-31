@@ -56,6 +56,7 @@ void menuprincipal()
         submenunotas();
         break;
     }
+    fclose(arquivo);
 }
 void submenucad()
 {
@@ -63,7 +64,7 @@ void submenucad()
     printf("|==========================================================================|\n");
     printf("|                              cadastro geral                              |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         1-Alunos                   |            2-Professores            |\n");
+    printf("|         1-Aluno                    |            2-Professor              |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         3-Disciplina               |            4-Cursos                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
@@ -87,13 +88,13 @@ void submenucad()
         printf("informe a data de nascimento do aluno:EX:00/00/0000\n");
         scanf("%s", &DataNascimentoAluno);
         printf("informe o curso do aluno:\n");
-        scanf("%s", curso);
+        scanf("%s", &curso);
         fprintf(arquivo, "+------------------Cad.aluno----------------+\n");
-        fprintf(arquivo, "o nome do aluno é:%s\n", NomeCompletoAluno);
-        fprintf(arquivo, "o CPF é:%s\n", CPFaluno);
-        fprintf(arquivo, "a matricula do aluno é:%s\n", MatriculaAluno);
-        fprintf(arquivo, "a data de nascimento do aluno é:%s\n", DataNascimentoAluno);
-        fprintf(arquivo, "o curso do aluno é:%s\n", cursoaluno);
+        fprintf(arquivo, "ALUNO: %s\n", NomeCompletoAluno);
+        fprintf(arquivo, "CPF: %s\n", CPFaluno);
+        fprintf(arquivo, "NUMERO DA MATRICULA: %s\n", MatriculaAluno);
+        fprintf(arquivo, "DATA DE NASCIMENTO: %s\n", DataNascimentoAluno);
+        fprintf(arquivo, "CURSO: %s\n", cursoaluno);
         submenucad();
 
         break;
@@ -109,10 +110,10 @@ void submenucad()
         printf("informe a data de nascimento do professor: EX:00/00/0000\n");
         scanf("%s", &DataNascimentoProf);
         fprintf(arquivo, "+------------------Cad.Prof-----------------+\n");
-        fprintf(arquivo, "o nome do professor é:%s\n", NomeCompletoProf);
-        fprintf(arquivo, "o CPF é:%s\n", CPFprof);
-        fprintf(arquivo, "a matricula do professor é:%s\n", MatriculaProf);
-        fprintf(arquivo, "a data de nascimento do professor é:%s\n", DataNascimentoProf);
+        fprintf(arquivo, "NOME:%s\n", NomeCompletoProf);
+        fprintf(arquivo, "CPF:%s\n", CPFprof);
+        fprintf(arquivo, "MATRICULA:%s\n", MatriculaProf);
+        fprintf(arquivo, "DATA NASCIMENTO:%s\n", DataNascimentoProf);
         submenucad();
 
         break;
@@ -122,8 +123,8 @@ void submenucad()
         printf("informe o codigo da disciplina:\n");
         scanf("%s", &CodigoDisciplina);
         fprintf(arquivo, "+------------------Cad.discip--------------+\n");
-        fprintf(arquivo, "O nome da disciplina é:%s\n", NomedaDisciplina);
-        fprintf(arquivo, "O código da disciplina é:%s\n", CodigoDisciplina);
+        fprintf(arquivo, "DISCIPLINA:%s\n", NomedaDisciplina);
+        fprintf(arquivo, "CODIGO:%s\n", CodigoDisciplina);
 
         submenucad();
         break;
@@ -131,7 +132,7 @@ void submenucad()
         printf("informe o curso: \n");
         scanf("%s", &curso);
         fprintf(arquivo, "+------------------Cad.Curso--------------+\n");
-        fprintf(arquivo, "o curso é:%s\n", curso);
+        fprintf(arquivo, "CURSO:%s\n", curso);
         // botar if-else
 
         break;
@@ -148,27 +149,48 @@ void submenuconteudo()
     printf("+--------------------------------------------------------------------------+\n");
     printf("Digite a materia que deseja contabilizar as notas:\n");
     scanf("%s", &materiaprof);
-    //por if-else
+
+    char opcao;
+
+    printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
+    scanf("%s",&opcao );
+    if (opcao = 1){
+        fclose(arquivo); 
+        menuprincipal();
+    } else(opcao==2);{   
+         exit(0);
+     } 
+   
 }
 void submenunotas()
 {
     printf("|==========================================================================|\n");
     printf("|                                    notas                                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("digite a priemira nota:");
+    printf("digite a primeira nota:");
     scanf("%f", &nota1);
-    printf("digite a priemira nota:");
+    printf("digite a segunda nota:");
     scanf("%f", &nota2);
-    printf("digite a priemira nota:");
+    printf("digite a terceira nota:");
     scanf("%f", &nota3);
-    printf("digite a priemira nota:");
+    printf("digite a quarta nota:");
     scanf("%f", &nota4);
     MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
     printf("a sua media é:%.2f\n", MediadasNotas);
     fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
     fprintf(arquivo, "a media das notas é:%.2f\n", MediadasNotas);
-    //if-else
-    fclose(arquivo);//esta linha é temporaria 
+
+    char opcao;
+
+    printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
+    scanf("%s",&opcao );
+    if (opcao = 1){
+        fclose(arquivo); 
+        menuprincipal();
+    } else(opcao==2);{   
+         exit(0);
+     } 
+        
 }
 void submenuimpressao()
 {
