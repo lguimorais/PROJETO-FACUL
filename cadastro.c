@@ -133,8 +133,17 @@ void submenucad()
         scanf("%s", &curso);
         fprintf(arquivo, "+------------------Cad.Curso--------------+\n");
         fprintf(arquivo, "CURSO:%s\n", curso);
-        // botar if-else
 
+        char opcao;
+
+        printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
+        scanf("%s",&opcao );
+         if (opcao = 1){
+             fclose(arquivo); 
+             menuprincipal();
+        } else(opcao==2);{   
+             exit(0);
+     } 
         break;
     case 5:
         system("cls");
@@ -179,6 +188,7 @@ void submenunotas()
     printf("a sua media é:%.2f\n", MediadasNotas);
     fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
     fprintf(arquivo, "a media das notas é:%.2f\n", MediadasNotas);
+    
 
     char opcao;
 
@@ -215,6 +225,8 @@ void submenuimpressao()
     case 3:
         break;
     case 4:
+        system("cls");
+        submenunotas(nota1,nota2,nota3, nota4, MediadasNotas);
         break;
     case 5:
         system("cls");
