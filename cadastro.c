@@ -17,8 +17,9 @@ char CodigoBoletim[20], DataBoletim[20], materiaprof[20];
 // calculo das notas
 float nota1, nota2, nota3, nota4, MediadasNotas;
 // operações dos menus
-int OpMenuPincipal,OpSubMenuCad, OpSubMenuImpressao, operacao;
+int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao, operacao;
 //  caso necessario acrescentar novas variaveis
+char opcao;
 
 void menuprincipal()
 {
@@ -56,7 +57,6 @@ void menuprincipal()
         submenunotas();
         break;
     }
-    fclose(arquivo);
 }
 void submenucad()
 {
@@ -151,14 +151,17 @@ void submenuconteudo()
     char opcao;
 
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
-    scanf("%s",&opcao );
-    if (opcao = 1){
-        fclose(arquivo); 
+    scanf("%s", &opcao);
+    if (opcao == 1)
+    {
+        fclose(arquivo);
         menuprincipal();
-    } else(opcao==2);{   
-         exit(0);
-     } 
-   
+    }
+    else
+        (opcao == 2);
+    {
+        exit(0);
+    }
 }
 void submenunotas()
 {
@@ -177,19 +180,20 @@ void submenunotas()
     printf("a sua media é:%.2f\n", MediadasNotas);
     fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
     fprintf(arquivo, "a media das notas é:%.2f\n", MediadasNotas);
-    
 
-    char opcao;
 
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
-    scanf("%s",&opcao );
-    if (opcao = 1){
-        fclose(arquivo); 
+    scanf("%s", &opcao);
+    if (opcao == 1)
+    {
+        fclose(arquivo);
         menuprincipal();
-    } else(opcao==2);{   
-         exit(0);
-     } 
-        
+    }
+    else
+        (opcao == 2);
+    {
+        printf("app encerrado\n");
+    }
 }
 void submenuimpressao()
 {
@@ -233,5 +237,6 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     menuprincipal();
+
     system("pause");
 }
