@@ -209,6 +209,9 @@ void submenuimpressao()
     switch (OpSubMenuImpressao)
     {
     case 1:
+    printf("Nome: %s\n", NomeCompletoAluno);
+    printf("CPF: %s\n", CPFaluno);
+
         break;
     case 2:
         break;
