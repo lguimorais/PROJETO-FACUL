@@ -148,7 +148,6 @@ void submenuconteudo()
     printf("Digite a materia que deseja contabilizar as notas:\n");
     scanf("%s", &materiaprof);
 
-    int opcao;
 
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
     scanf("%d", &opcao);
@@ -159,7 +158,7 @@ void submenuconteudo()
     }
     else
     {
-        exit(0);
+        printf("app encerrado\n");
     }
 }
 void submenunotas()
@@ -180,14 +179,15 @@ void submenunotas()
     fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
     fprintf(arquivo, "a media das notas é:%.2f\n", MediadasNotas);
 
-
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
     scanf("%d", &opcao);
-    if (opcao == 1) {
+    if (opcao == 1)
+    {
         fclose(arquivo);
         menuprincipal();
     }
-    else {
+    else
+    {
         printf("app encerrado\n");
     }
 }
