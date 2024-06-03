@@ -215,7 +215,12 @@ void submenuimpressao()
         break;
     case 4:
         system("cls");
-        submenunotas();
+        printf("Boletim:\n");
+        printf("Nota 1: %.2f\n", nota1);
+        printf("Nota 2: %.2f\n", nota2);
+        printf("Nota 3: %.2f\n", nota3);
+        printf("Nota 4: %.2f\n", nota4);
+        printf("Média: %.2f\n", MediadasNotas);
         break;
     case 5:
         system("cls");
