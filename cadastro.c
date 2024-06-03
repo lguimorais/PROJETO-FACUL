@@ -189,6 +189,7 @@ void submenunotas()
     else
     {
         printf("app encerrado\n");
+        printf("aline");
     }
 }
 void submenuimpressao()
