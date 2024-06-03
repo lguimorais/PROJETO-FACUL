@@ -19,7 +19,7 @@ float nota1, nota2, nota3, nota4, MediadasNotas;
 // operações dos menus
 int OpMenuPincipal, OpSubMenuCad, OpSubMenuImpressao, operacao;
 //  caso necessario acrescentar novas variaveis
-char opcao;
+int opcao;
 
 void menuprincipal()
 {
@@ -148,17 +148,16 @@ void submenuconteudo()
     printf("Digite a materia que deseja contabilizar as notas:\n");
     scanf("%s", &materiaprof);
 
-    char opcao;
+    int opcao;
 
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
-    scanf("%s", &opcao);
+    scanf("%d", &opcao);
     if (opcao == 1)
     {
         fclose(arquivo);
         menuprincipal();
     }
     else
-        (opcao == 2);
     {
         exit(0);
     }
@@ -183,15 +182,12 @@ void submenunotas()
 
 
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
-    scanf("%s", &opcao);
-    if (opcao == 1)
-    {
+    scanf("%d", &opcao);
+    if (opcao == 1) {
         fclose(arquivo);
         menuprincipal();
     }
-    else
-        (opcao == 2);
-    {
+    else {
         printf("app encerrado\n");
     }
 }
