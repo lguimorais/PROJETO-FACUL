@@ -5,7 +5,7 @@
 // arquivos
 FILE *arquivo;
 // dados aluno
-char MatriculaAluno[20], CPFaluno[20], DataNascimentoAluno[20], NomeCompletoAluno[20], cursoaluno[20];
+char MatriculaAluno[20], CPFaluno[20], DataNascimentoAluno[20], NomeCompletoAluno[20];
 // dados professor
 char NomeCompletoProf[20], MatriculaProf[20], CPFprof[20], DataNascimentoProf[20];
 // disciplina
@@ -94,7 +94,7 @@ void submenucad()
         fprintf(arquivo, "CPF: %s\n", CPFaluno);
         fprintf(arquivo, "NUMERO DA MATRICULA: %s\n", MatriculaAluno);
         fprintf(arquivo, "DATA DE NASCIMENTO: %s\n", DataNascimentoAluno);
-        fprintf(arquivo, "CURSO: %s\n", cursoaluno);
+        fprintf(arquivo, "CURSO: %s\n", curso);
         submenucad();
 
         break;
@@ -211,11 +211,20 @@ void submenuimpressao()
     case 1:
     printf("Nome: %s\n", NomeCompletoAluno);
     printf("CPF: %s\n", CPFaluno);
-
+    printf("Matrícula: %s\n", MatriculaAluno);
+    printf("Data de Nascimento: %s\n", DataNascimentoAluno);
+    printf("Curso: %s\n", curso);
         break;
     case 2:
+    printf("Matéria: %s\n", materiaprof);
         break;
-    case 3:
+    case 3: 
+    printf("Disciplina: %s\n", NomedaDisciplina);
+    printf("Código da disciplina: %s\n", CodigoDisciplina);
+    printf("Professor: %s\n", NomeCompletoProf);
+    printf("CPF: %s\n", CPFprof);
+    printf("Data de Nascimento: %s\n", DataNascimentoProf);
+    printf("Matrícula: %s\n", MatriculaProf);
         break;
     case 4:
         system("cls");
