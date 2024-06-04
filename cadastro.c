@@ -217,9 +217,32 @@ void submenuimpressao()
         printf("Matrícula: %s\n", MatriculaAluno);
         printf("Data de Nascimento: %s\n", DataNascimentoAluno);
         printf("Curso: %s\n", curso);
+        system("pause");
+        system("cls");
+        printf("Deseja voltar ao menu principal? \n 1-sim 2-não\n");
+        scanf("%d" , &opcao);
+        if(opcao == 1)
+        {
+            menuprincipal();
+        }
+        else 
+        {
+            printf("app encerrado\n");
+        }
         break;
     case 2:
         printf("Matéria: %s\n", materiaprof);
+        system("pause");
+        system("cls");
+        printf("Deseja voltar ao menu principal? \n 1-sim 2-não\n");
+        scanf("%d", &opcao);
+        if(opcao == 1)
+        {
+            menuprincipal();
+        }
+        else{
+            printf("app encerrado\n");
+        }
         break;
     case 3:
         printf("Disciplina: %s\n", NomedaDisciplina);
@@ -228,6 +251,18 @@ void submenuimpressao()
         printf("CPF: %s\n", CPFprof);
         printf("Data de Nascimento: %s\n", DataNascimentoProf);
         printf("Matrícula: %s\n", MatriculaProf);
+        system("pause");
+        system("cls");
+        printf("Deseja voltar ao menu principal? \n 1-sim 2-não\n");
+        scanf("%d", &opcao);
+        if(opcao == 1)
+        {
+            menuprincupal();
+        }
+        else 
+        {
+            printf("app encerrado\n");
+        }
         break;
     case 4:
         system("cls");
