@@ -148,7 +148,6 @@ void submenuconteudo()
     printf("Digite a materia que deseja contabilizar as notas:\n");
     scanf("%s", &materiaprof);
 
-
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
     scanf("%d", &opcao);
     if (opcao == 1)
@@ -189,7 +188,6 @@ void submenunotas()
     else
     {
         printf("app encerrado\n");
-    
     }
 }
 void submenuimpressao()
@@ -209,22 +207,22 @@ void submenuimpressao()
     switch (OpSubMenuImpressao)
     {
     case 1:
-    printf("Nome: %s\n", NomeCompletoAluno);
-    printf("CPF: %s\n", CPFaluno);
-    printf("Matrícula: %s\n", MatriculaAluno);
-    printf("Data de Nascimento: %s\n", DataNascimentoAluno);
-    printf("Curso: %s\n", curso);
+        printf("Nome: %s\n", NomeCompletoAluno);
+        printf("CPF: %s\n", CPFaluno);
+        printf("Matrícula: %s\n", MatriculaAluno);
+        printf("Data de Nascimento: %s\n", DataNascimentoAluno);
+        printf("Curso: %s\n", curso);
         break;
     case 2:
-    printf("Matéria: %s\n", materiaprof);
+        printf("Matéria: %s\n", materiaprof);
         break;
-    case 3: 
-    printf("Disciplina: %s\n", NomedaDisciplina);
-    printf("Código da disciplina: %s\n", CodigoDisciplina);
-    printf("Professor: %s\n", NomeCompletoProf);
-    printf("CPF: %s\n", CPFprof);
-    printf("Data de Nascimento: %s\n", DataNascimentoProf);
-    printf("Matrícula: %s\n", MatriculaProf);
+    case 3:
+        printf("Disciplina: %s\n", NomedaDisciplina);
+        printf("Código da disciplina: %s\n", CodigoDisciplina);
+        printf("Professor: %s\n", NomeCompletoProf);
+        printf("CPF: %s\n", CPFprof);
+        printf("Data de Nascimento: %s\n", DataNascimentoProf);
+        printf("Matrícula: %s\n", MatriculaProf);
         break;
     case 4:
         system("cls");
