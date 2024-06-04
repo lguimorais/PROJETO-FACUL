@@ -176,6 +176,11 @@ void submenunotas()
     MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
     printf("a sua media é:%.2f\n", MediadasNotas);
     fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
+    fprintf(arquivo, "Nota 1:%.2f\n", nota1);
+    fprintf(arquivo, "Nota 2:%.2f\n", nota2);
+    fprintf(arquivo, "Nota 3:%.2f\n", nota3);
+    fprintf(arquivo, "Nota 4:%.2f\n", nota4);
+
     fprintf(arquivo, "a media das notas é:%.2f\n", MediadasNotas);
 
     printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
