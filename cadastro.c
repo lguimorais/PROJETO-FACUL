@@ -26,11 +26,11 @@ void menuprincipal()
     arquivo = fopen("C://temp//notas.txt", "w+");
     if (arquivo == 0)
     {
-        printf("falha ao visualizar o arquivo.\n");
+        printf("Falha ao visualizar o arquivo.\n");
     }
 
     printf("|==========================================================================|\n");
-    printf("|                               menu principal                             |\n");
+    printf("|                               Menu principal                             |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         1-Cadastro                 |         2-Impressão                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
@@ -62,13 +62,13 @@ void submenucad()
 {
 
     printf("|==========================================================================|\n");
-    printf("|                              cadastro geral                              |\n");
+    printf("|                              Cadastro geral                              |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         1-Aluno                    |            2-Professor              |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("|         3-Disciplina               |            4-Cursos                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|                    5- para voltar para o menu principal                  |\n");
+    printf("|                      5-Voltar para o menu principal                      |\n");
     printf("===========================================================================+\n");
     printf("Informe a operação.\n");
     scanf("%d", &OpSubMenuCad);
@@ -76,23 +76,23 @@ void submenucad()
     {
     case 1:
 
-        printf("arquivo encontrado com sucesso\n");
+        printf("Arquivo encontrado com sucesso!\n");
         system("Pause");
-        printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
-        printf("informe o nome do aluno:EX:\"pedro\" \n");
+        printf("CPF, data de nascimento e matrícula digite apenas os números.\n");
+        printf("Informe o nome completo do aluno: EX:\"Pedro\" \n");
         scanf("%s", &NomeCompletoAluno);
-        printf("informe o CPF  do aluno: EX:000.000.000-00\n");
+        printf("Informe o CPF do aluno: EX:000.000.000-00\n");
         scanf("%s", &CPFaluno);
-        printf("informe a matricula do aluno:EX:000.000\n");
+        printf("Informe a matrÍcula do aluno: EX:000.000\n");
         scanf("%s", &MatriculaAluno);
-        printf("informe a data de nascimento do aluno:EX:00/00/0000\n");
+        printf("Informe a data de nascimento do aluno: EX:00/00/0000\n");
         scanf("%s", &DataNascimentoAluno);
-        printf("informe o curso do aluno:\n");
+        printf("Informe o curso do aluno:\n");
         scanf("%s", &curso);
-        fprintf(arquivo, "+------------------Cad.aluno----------------+\n");
+        fprintf(arquivo, "+---------Cadastro-Aluno----------+\n");
         fprintf(arquivo, "ALUNO: %s\n", NomeCompletoAluno);
         fprintf(arquivo, "CPF: %s\n", CPFaluno);
-        fprintf(arquivo, "NUMERO DA MATRICULA: %s\n", MatriculaAluno);
+        fprintf(arquivo, "MATRÍCULA: %s\n", MatriculaAluno);
         fprintf(arquivo, "DATA DE NASCIMENTO: %s\n", DataNascimentoAluno);
         fprintf(arquivo, "CURSO: %s\n", curso);
         submenucad();
@@ -100,38 +100,38 @@ void submenucad()
         break;
     case 2:
 
-        printf("nos dados:CPF,data de nascimento e matricula digite apenas os numeros.\n");
-        printf("insira os dados do professor: EX:\"pedro\"\n");
+        printf("CPF, data de nascimento e matrícula digite apenas os números.\n");
+        printf("Informe o nome completo do professor: EX:\"Pedro\"\n");
         scanf("%s", &NomeCompletoProf);
-        printf("informe o CPF  do professor: EX:000.000.000-00\n");
+        printf("Informe o CPF do professor: EX:000.000.000-00\n");
         scanf("%s", &CPFprof);
-        printf("informe a matricula do professor: EX:000.000\n");
+        printf("Informe a matrÍcula do professor: EX:000.000\n");
         scanf("%s", &MatriculaProf);
-        printf("informe a data de nascimento do professor: EX:00/00/0000\n");
+        printf("Informe a data de nascimento do professor: EX:00/00/0000\n");
         scanf("%s", &DataNascimentoProf);
-        fprintf(arquivo, "+------------------Cad.Prof-----------------+\n");
+        fprintf(arquivo, "+----------Cadastro-Professor--------+\n");
         fprintf(arquivo, "NOME:%s\n", NomeCompletoProf);
         fprintf(arquivo, "CPF:%s\n", CPFprof);
-        fprintf(arquivo, "MATRICULA:%s\n", MatriculaProf);
+        fprintf(arquivo, "MATRÍCULA:%s\n", MatriculaProf);
         fprintf(arquivo, "DATA NASCIMENTO:%s\n", DataNascimentoProf);
         submenucad();
 
         break;
     case 3:
-        printf("informe a disciplina:\n");
+        printf("Informe a disciplina:\n");
         scanf("%s", &NomedaDisciplina);
-        printf("informe o codigo da disciplina:\n");
+        printf("Informe o código da disciplina:\n");
         scanf("%s", &CodigoDisciplina);
-        fprintf(arquivo, "+------------------Cad.discip--------------+\n");
+        fprintf(arquivo, "+--------Cadastro-Disciplina--------+\n");
         fprintf(arquivo, "DISCIPLINA:%s\n", NomedaDisciplina);
         fprintf(arquivo, "CODIGO:%s\n", CodigoDisciplina);
 
         submenucad();
         break;
     case 4:
-        printf("informe o curso: \n");
+        printf("Informe o curso: \n");
         scanf("%s", &curso);
-        fprintf(arquivo, "+------------------Cad.Curso--------------+\n");
+        fprintf(arquivo, "+--------Cadastro-Curso---------+\n");
         fprintf(arquivo, "CURSO:%s\n", curso);
         break;
     case 5:
@@ -143,12 +143,12 @@ void submenucad()
 void submenuconteudo()
 {
     printf("|==========================================================================|\n");
-    printf("|                                  conteudos                               |\n");
+    printf("|                                  Conteúdos                               |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("Digite a materia que deseja contabilizar as notas:\n");
+    printf("Digite a matéria que deseja contabilizar as notas:\n");
     scanf("%s", &materiaprof);
 
-    printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
+    printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
     scanf("%d", &opcao);
     if (opcao == 1)
     {
@@ -157,33 +157,33 @@ void submenuconteudo()
     }
     else
     {
-        printf("app encerrado\n");
+        printf("App encerrado.\n");
     }
 }
 void submenunotas()
 {
     printf("|==========================================================================|\n");
-    printf("|                                    notas                                 |\n");
+    printf("|                                    Notas                                 |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("digite a primeira nota:");
+    printf("Digite a primeira nota:");
     scanf("%f", &nota1);
-    printf("digite a segunda nota:");
+    printf("Digite a segunda nota:");
     scanf("%f", &nota2);
-    printf("digite a terceira nota:");
+    printf("Digite a terceira nota:");
     scanf("%f", &nota3);
-    printf("digite a quarta nota:");
+    printf("Digite a quarta nota:");
     scanf("%f", &nota4);
     MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
     printf("a sua media é:%.2f\n", MediadasNotas);
-    fprintf(arquivo, "+-----------------Valor das Notas-------------+\n");
+    fprintf(arquivo, "+-----------Valor-das-Notas---------+\n");
     fprintf(arquivo, "Nota 1:%.2f\n", nota1);
     fprintf(arquivo, "Nota 2:%.2f\n", nota2);
     fprintf(arquivo, "Nota 3:%.2f\n", nota3);
     fprintf(arquivo, "Nota 4:%.2f\n", nota4);
 
-    fprintf(arquivo, "a media das notas é:%.2f\n", MediadasNotas);
+    fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
 
-    printf("Deseja voltar ao menu principal? \n 1-sim 2-nao:\n");
+    printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
     scanf("%d", &opcao);
     if (opcao == 1)
     {
@@ -192,20 +192,20 @@ void submenunotas()
     }
     else
     {
-        printf("app encerrado\n");
+        printf("App encerrado.\n");
     }
 }
 void submenuimpressao()
 {
 
     printf("|==========================================================================|\n");
-    printf("|                              impressão de dados                          |\n");
+    printf("|                              Impressão de dados                          |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         1-Alunos e Curso                 |          2-conteúdos          |\n");
+    printf("|         1-Alunos e Curso                 |          2-Conteúdos          |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         3-Disciplina e Professor         |          4-boletim            |\n");
+    printf("|         3-Disciplina e Professor         |          4-Boletim            |\n");
     printf("+--------------------------------------------------------------------------+\n");
-    printf("|         5-menu principal                 |          6-cadastro geral     |\n");
+    printf("|         5-Menu principal                 |          6-Cadastro geral     |\n");
     printf("===========================================================================+\n");
     printf("Informe a operação:\n");
     scanf("%d", &OpSubMenuImpressao);
@@ -219,7 +219,7 @@ void submenuimpressao()
         printf("Curso: %s\n", curso);
         system("pause");
         system("cls");
-        printf("Deseja voltar ao menu principal? \n 1-sim 2-não\n");
+        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
         scanf("%d" , &opcao);
         if(opcao == 1)
         {
@@ -227,21 +227,21 @@ void submenuimpressao()
         }
         else 
         {
-            printf("app encerrado\n");
+            printf("App encerrado.\n");
         }
         break;
     case 2:
         printf("Matéria: %s\n", materiaprof);
         system("pause");
         system("cls");
-        printf("Deseja voltar ao menu principal? \n 1-sim 2-não\n");
+        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
         scanf("%d", &opcao);
         if(opcao == 1)
         {
             menuprincipal();
         }
         else{
-            printf("app encerrado\n");
+            printf("App encerrado.\n");
         }
         break;
     case 3:
@@ -253,7 +253,7 @@ void submenuimpressao()
         printf("Matrícula: %s\n", MatriculaProf);
         system("pause");
         system("cls");
-        printf("Deseja voltar ao menu principal? \n 1-sim 2-não\n");
+        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
         scanf("%d", &opcao);
         if (opcao == 1)
         {
@@ -261,7 +261,7 @@ void submenuimpressao()
         }
         else
         {
-            printf("app encerrado\n");
+            printf("App encerrado.\n");
         }
         break;
     case 4:
