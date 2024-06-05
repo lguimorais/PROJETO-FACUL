@@ -251,7 +251,18 @@ void submenuimpressao()
         printf("CPF: %s\n", CPFprof);
         printf("Data de Nascimento: %s\n", DataNascimentoProf);
         printf("Matrícula: %s\n", MatriculaProf);
-
+        system("pause");
+        system("cls");
+        printf("Deseja voltar ao menu principal? \n 1-sim 2-não\n");
+        scanf("%d", &opcao);
+        if (opcao == 1)
+        {
+            menuprincipal();
+        }
+        else
+        {
+            printf("app encerrado\n");
+        }
         break;
     case 4:
         system("cls");
