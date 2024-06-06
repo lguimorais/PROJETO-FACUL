@@ -96,7 +96,6 @@ void submenucad()
         fprintf(arquivo, "DATA DE NASCIMENTO: %s\n", DataNascimentoAluno);
         fprintf(arquivo, "CURSO: %s\n", curso);
         submenucad();
-
         break;
     case 2:
 
@@ -133,6 +132,16 @@ void submenucad()
         scanf("%s", &curso);
         fprintf(arquivo, "+--------Cadastro-Curso---------+\n");
         fprintf(arquivo, "CURSO:%s\n", curso);
+        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
+        scanf("%d", &opcao);
+        if (opcao == 1)
+        {
+            menuprincipal();
+        }
+        else
+        {
+            printf("App encerrado.\n");
+        }
         break;
     case 5:
         system("cls");
@@ -182,12 +191,11 @@ void submenunotas()
     fprintf(arquivo, "Nota 4:%.2f\n", nota4);
 
     fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
-
+    fclose(arquivo);
     printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
     scanf("%d", &opcao);
     if (opcao == 1)
     {
-        fclose(arquivo);
         menuprincipal();
     }
     else
@@ -220,12 +228,12 @@ void submenuimpressao()
         system("pause");
         system("cls");
         printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
-        scanf("%d" , &opcao);
-        if(opcao == 1)
+        scanf("%d", &opcao);
+        if (opcao == 1)
         {
             menuprincipal();
         }
-        else 
+        else
         {
             printf("App encerrado.\n");
         }
@@ -236,11 +244,12 @@ void submenuimpressao()
         system("cls");
         printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
         scanf("%d", &opcao);
-        if(opcao == 1)
+        if (opcao == 1)
         {
             menuprincipal();
         }
-        else{
+        else
+        {
             printf("App encerrado.\n");
         }
         break;
