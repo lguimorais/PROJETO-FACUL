@@ -189,7 +189,6 @@ void submenunotas()
     fprintf(arquivo, "Nota 2:%.2f\n", nota2);
     fprintf(arquivo, "Nota 3:%.2f\n", nota3);
     fprintf(arquivo, "Nota 4:%.2f\n", nota4);
-
     fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
     fclose(arquivo);
     printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
