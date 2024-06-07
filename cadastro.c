@@ -280,6 +280,18 @@ void submenuimpressao()
         printf("Nota 3: %.2f\n", nota3);
         printf("Nota 4: %.2f\n", nota4);
         printf("Média: %.2f\n", MediadasNotas);
+        system("pause");
+        system("cls");
+        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
+        scanf("%d", &opcao);
+        if (opcao == 1)
+        {
+            menuprincipal();
+        }
+        else
+        {
+            printf("App encerrado.\n");
+        }
         break;
     case 5:
         system("cls");
