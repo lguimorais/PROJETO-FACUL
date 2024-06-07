@@ -190,7 +190,7 @@ void submenunotas()
     fprintf(arquivo, "Nota 3:%.2f\n", nota3);
     fprintf(arquivo, "Nota 4:%.2f\n", nota4);
     fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
-    fclose(arquivo);
+
     printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
     scanf("%d", &opcao);
     if (opcao == 1)
@@ -309,6 +309,6 @@ int main()
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     menuprincipal();
-
+    fclose(arquivo);
     system("pause");
 }
