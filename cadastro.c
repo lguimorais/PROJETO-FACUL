@@ -57,6 +57,38 @@ void menuprincipal()
         submenunotas();
         break;
     }
+}void submenunotas()
+{
+    printf("|==========================================================================|\n");
+    printf("|                                    Notas                                 |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("Digite a primeira nota:");
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota:");
+    scanf("%f", &nota2);
+    printf("Digite a terceira nota:");
+    scanf("%f", &nota3);
+    printf("Digite a quarta nota:");
+    scanf("%f", &nota4);
+    MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
+    printf("a sua media é:%.2f\n", MediadasNotas);
+    fprintf(arquivo, "+-----------Valor-das-Notas---------+\n");
+    fprintf(arquivo, "Nota 1:%.2f\n", nota1);
+    fprintf(arquivo, "Nota 2:%.2f\n", nota2);
+    fprintf(arquivo, "Nota 3:%.2f\n", nota3);
+    fprintf(arquivo, "Nota 4:%.2f\n", nota4);
+    fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
+
+    printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
+    scanf("%d", &opcao);
+    if (opcao == 1)
+    {
+        menuprincipal();
+    }
+    else
+    {
+        printf("App encerrado.\n");
+    }
 }
 void submenucad()
 {
@@ -169,39 +201,7 @@ void submenuconteudo()
         printf("App encerrado.\n");
     }
 }
-void submenunotas()
-{
-    printf("|==========================================================================|\n");
-    printf("|                                    Notas                                 |\n");
-    printf("+--------------------------------------------------------------------------+\n");
-    printf("Digite a primeira nota:");
-    scanf("%f", &nota1);
-    printf("Digite a segunda nota:");
-    scanf("%f", &nota2);
-    printf("Digite a terceira nota:");
-    scanf("%f", &nota3);
-    printf("Digite a quarta nota:");
-    scanf("%f", &nota4);
-    MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
-    printf("a sua media é:%.2f\n", MediadasNotas);
-    fprintf(arquivo, "+-----------Valor-das-Notas---------+\n");
-    fprintf(arquivo, "Nota 1:%.2f\n", nota1);
-    fprintf(arquivo, "Nota 2:%.2f\n", nota2);
-    fprintf(arquivo, "Nota 3:%.2f\n", nota3);
-    fprintf(arquivo, "Nota 4:%.2f\n", nota4);
-    fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
 
-    printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
-    scanf("%d", &opcao);
-    if (opcao == 1)
-    {
-        menuprincipal();
-    }
-    else
-    {
-        printf("App encerrado.\n");
-    }
-}
 void submenuimpressao()
 {
 
