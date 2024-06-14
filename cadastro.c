@@ -23,11 +23,6 @@ int opcao;
 
 void menuprincipal()
 {
-    arquivo = fopen("C://temp//notas.txt", "w+");
-    if (arquivo == 0)
-    {
-        printf("Falha ao visualizar o arquivo.\n");
-    }
 
     printf("|==========================================================================|\n");
     printf("|                               Menu principal                             |\n");
@@ -57,41 +52,14 @@ void menuprincipal()
         submenunotas();
         break;
     }
-}void submenunotas()
-{
-    printf("|==========================================================================|\n");
-    printf("|                                    Notas                                 |\n");
-    printf("+--------------------------------------------------------------------------+\n");
-    printf("Digite a primeira nota:");
-    scanf("%f", &nota1);
-    printf("Digite a segunda nota:");
-    scanf("%f", &nota2);
-    printf("Digite a terceira nota:");
-    scanf("%f", &nota3);
-    printf("Digite a quarta nota:");
-    scanf("%f", &nota4);
-    MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
-    printf("a sua media é:%.2f\n", MediadasNotas);
-    fprintf(arquivo, "+-----------Valor-das-Notas---------+\n");
-    fprintf(arquivo, "Nota 1:%.2f\n", nota1);
-    fprintf(arquivo, "Nota 2:%.2f\n", nota2);
-    fprintf(arquivo, "Nota 3:%.2f\n", nota3);
-    fprintf(arquivo, "Nota 4:%.2f\n", nota4);
-    fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
-
-    printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
-    scanf("%d", &opcao);
-    if (opcao == 1)
-    {
-        menuprincipal();
-    }
-    else
-    {
-        printf("App encerrado.\n");
-    }
 }
 void submenucad()
 {
+    arquivo = fopen("C://temp//notas.txt", "w+");
+    if (arquivo == 0)
+    {
+        printf("Falha ao visualizar o arquivo.\n");
+    }
 
     printf("|==========================================================================|\n");
     printf("|                              Cadastro geral                              |\n");
@@ -180,14 +148,22 @@ void submenucad()
         menuprincipal();
         break;
     }
+    fclose(arquivo);
 }
 void submenuconteudo()
 {
+    arquivo = fopen("C://temp//notas.txt", "a+");
+    if (arquivo == 0)
+    {
+        printf("Falha ao visualizar o arquivo.\n");
+    }
     printf("|==========================================================================|\n");
     printf("|                                  Conteúdos                               |\n");
     printf("+--------------------------------------------------------------------------+\n");
     printf("Digite a matéria que deseja contabilizar as notas:\n");
     scanf("%s", &materiaprof);
+    fprintf(arquivo, "+--------Conteúdo---------+\n");
+    fprintf(arquivo, "Matéria:%s\n", materiaprof);
 
     printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
     scanf("%d", &opcao);
@@ -199,11 +175,53 @@ void submenuconteudo()
     else
     {
         printf("App encerrado.\n");
+    }fclose(arquivo);
+}
+
+void submenunotas()
+{
+    arquivo = fopen("C://temp//notas.txt", "a+");
+    if (arquivo == 0)
+    {
+        printf("Falha ao visualizar o arquivo.\n");
     }
+    printf("|==========================================================================|\n");
+    printf("|                                    Notas                                 |\n");
+    printf("+--------------------------------------------------------------------------+\n");
+    printf("Digite a primeira nota:");
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota:");
+    scanf("%f", &nota2);
+    printf("Digite a terceira nota:");
+    scanf("%f", &nota3);
+    printf("Digite a quarta nota:");
+    scanf("%f", &nota4);
+    MediadasNotas = (nota1 + nota2 + nota3 + nota4) / 4;
+    printf("a sua media é:%.2f\n", MediadasNotas);
+    fprintf(arquivo, "+-----------Valor-das-Notas---------+\n");
+    fprintf(arquivo, "Nome do aluno:%s\n", NomeCompletoAluno);
+    fprintf(arquivo, "Nota 1:%.2f\n", nota1);
+    fprintf(arquivo, "Nota 2:%.2f\n", nota2);
+    fprintf(arquivo, "Nota 3:%.2f\n", nota3);
+    fprintf(arquivo, "Nota 4:%.2f\n", nota4);
+    fprintf(arquivo, "A media das notas é:%.2f\n", MediadasNotas);
+
+    printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
+    scanf("%d", &opcao);
+    if (opcao == 1)
+    {
+        menuprincipal();
+    }
+    else
+    {
+        printf("App encerrado.\n");
+    }
+    fclose(arquivo);
 }
 
 void submenuimpressao()
 {
+    FILE *arquivo;
 
     printf("|==========================================================================|\n");
     printf("|                              Impressão de dados                          |\n");
@@ -216,66 +234,87 @@ void submenuimpressao()
     printf("===========================================================================+\n");
     printf("Informe a operação:\n");
     scanf("%d", &OpSubMenuImpressao);
+    getchar(); // Para consumir a nova linha deixada por scanf
+
     switch (OpSubMenuImpressao)
     {
     case 1:
-        printf("Nome: %s\n", NomeCompletoAluno);
-        printf("CPF: %s\n", CPFaluno);
-        printf("Matrícula: %s\n", MatriculaAluno);
-        printf("Data de Nascimento: %s\n", DataNascimentoAluno);
-        printf("Curso: %s\n", curso);
+        arquivo = fopen("alunos_e_curso.txt", "r");
+        if (arquivo == NULL)
+        {
+            printf("Erro ao abrir o arquivo.\n");
+            return;
+        }
+        fgets(NomeCompletoAluno, sizeof(NomeCompletoAluno), arquivo);
+        fgets(CPFaluno, sizeof(CPFaluno), arquivo);
+        fgets(MatriculaAluno, sizeof(MatriculaAluno), arquivo);
+        fgets(DataNascimentoAluno, sizeof(DataNascimentoAluno), arquivo);
+        fgets(curso, sizeof(curso), arquivo);
+        fclose(arquivo);
+
+        printf("Nome: %s", NomeCompletoAluno);
+        printf("CPF: %s", CPFaluno);
+        printf("Matrícula: %s", MatriculaAluno);
+        printf("Data de Nascimento: %s", DataNascimentoAluno);
+        printf("Curso: %s", curso);
         system("pause");
         system("cls");
-        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
-        scanf("%d", &opcao);
-        if (opcao == 1)
-        {
-            menuprincipal();
-        }
-        else
-        {
-            printf("App encerrado.\n");
-        }
         break;
     case 2:
-        printf("Matéria: %s\n", materiaprof);
+        arquivo = fopen("conteudos.txt", "r");
+        if (arquivo == NULL)
+        {
+            printf("Erro ao abrir o arquivo.\n");
+            return;
+        }
+        fgets(materiaprof, sizeof(materiaprof), arquivo);
+        fclose(arquivo);
+
+        printf("Matéria: %s", materiaprof);
         system("pause");
         system("cls");
-        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
-        scanf("%d", &opcao);
-        if (opcao == 1)
-        {
-            menuprincipal();
-        }
-        else
-        {
-            printf("App encerrado.\n");
-        }
         break;
     case 3:
-        printf("Disciplina: %s\n", NomedaDisciplina);
-        printf("Código da disciplina: %s\n", CodigoDisciplina);
-        printf("Professor: %s\n", NomeCompletoProf);
-        printf("CPF: %s\n", CPFprof);
-        printf("Data de Nascimento: %s\n", DataNascimentoProf);
-        printf("Matrícula: %s\n", MatriculaProf);
+        arquivo = fopen("disciplina_e_professor.txt", "r");
+        if (arquivo == NULL)
+        {
+            printf("Erro ao abrir o arquivo.\n");
+            return;
+        }
+        fgets(NomedaDisciplina, sizeof(NomedaDisciplina), arquivo);
+        fgets(CodigoDisciplina, sizeof(CodigoDisciplina), arquivo);
+        fgets(NomeCompletoProf, sizeof(NomeCompletoProf), arquivo);
+        fgets(CPFprof, sizeof(CPFprof), arquivo);
+        fgets(DataNascimentoProf, sizeof(DataNascimentoProf), arquivo);
+        fgets(MatriculaProf, sizeof(MatriculaProf), arquivo);
+        fclose(arquivo);
+
+        printf("Disciplina: %s", NomedaDisciplina);
+        printf("Código da disciplina: %s", CodigoDisciplina);
+        printf("Professor: %s", NomeCompletoProf);
+        printf("CPF: %s", CPFprof);
+        printf("Data de Nascimento: %s", DataNascimentoProf);
+        printf("Matrícula: %s", MatriculaProf);
         system("pause");
         system("cls");
-        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
-        scanf("%d", &opcao);
-        if (opcao == 1)
-        {
-            menuprincipal();
-        }
-        else
-        {
-            printf("App encerrado.\n");
-        }
         break;
     case 4:
-        system("cls");
+        arquivo = fopen("boletim.txt", "r");
+        if (arquivo == NULL)
+        {
+            printf("Erro ao abrir o arquivo.\n");
+            return;
+        }
+        fgets(NomeCompletoAluno, sizeof(NomeCompletoAluno), arquivo);
+        fscanf(arquivo, "%f", &nota1);
+        fscanf(arquivo, "%f", &nota2);
+        fscanf(arquivo, "%f", &nota3);
+        fscanf(arquivo, "%f", &nota4);
+        fscanf(arquivo, "%f", &MediadasNotas);
+        fclose(arquivo);
+
         printf("Boletim:\n");
-        printf("nome do aluno: %s\n", NomeCompletoAluno);
+        printf("Nome do aluno: %s", NomeCompletoAluno);
         printf("Nota 1: %.2f\n", nota1);
         printf("Nota 2: %.2f\n", nota2);
         printf("Nota 3: %.2f\n", nota3);
@@ -283,16 +322,6 @@ void submenuimpressao()
         printf("Média: %.2f\n", MediadasNotas);
         system("pause");
         system("cls");
-        printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
-        scanf("%d", &opcao);
-        if (opcao == 1)
-        {
-            menuprincipal();
-        }
-        else
-        {
-            printf("App encerrado.\n");
-        }
         break;
     case 5:
         system("cls");
@@ -302,14 +331,26 @@ void submenuimpressao()
         system("cls");
         submenucad();
         break;
+    default:
+        printf("Opção inválida.\n");
+        break;
+    }
+
+    printf("Deseja voltar ao menu principal? \n 1-Sim 2-Não:\n");
+    scanf("%d", &opcao);
+    if (opcao == 1)
+    {
+        menuprincipal();
+    }
+    else
+    {
+        printf("App encerrado.\n");
     }
 }
-
 int main()
 {
     setlocale(LC_ALL, "Portuguese_Brazil");
 
     menuprincipal();
-    fclose(arquivo);
     system("pause");
 }
