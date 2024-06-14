@@ -275,6 +275,7 @@ void submenuimpressao()
     case 4:
         system("cls");
         printf("Boletim:\n");
+        printf("nome do aluno: %s\n", NomeCompletoAluno);
         printf("Nota 1: %.2f\n", nota1);
         printf("Nota 2: %.2f\n", nota2);
         printf("Nota 3: %.2f\n", nota3);
